@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 220px;
+    padding: 10px;
+  }
+  .grid-item {
+    font-size: 1.5rem;
+    background-color: var(--bs-info);
+    padding: 10px;
+    border: 1px solid var(--bs-info);
+    border-radius: 50%;
+    text-align: center;
+    color:white;
+    cursor:pointer;
+  }
+  .forgotten{
+    color:white;
+    cursor:pointer;
+    text-decoration: underline;
+  }

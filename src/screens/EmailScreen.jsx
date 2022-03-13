@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+
 import cookie from "react-cookies";
 
 const EmailScreen = (props) => {
-  const [email, setEmail] = useState(false);
+//   const [email, setEmail] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +26,7 @@ const EmailScreen = (props) => {
           props.setAuth(true);
         }
         if (data.email) {
-          setEmail(data.email);
+            props.setEmail(data.email);
         }
         console.log(data);
       });
@@ -34,12 +34,12 @@ const EmailScreen = (props) => {
 
   const validCreate = (event) => {
     event.preventDefault();
-    console.log("valid")
+    props.setAuth(true);
   };
 
   const cancelCreate = (event) => {
     event.preventDefault();
-    console.log("cancel")
+    props.setEmail(false);
   };
 
   return (
@@ -67,7 +67,7 @@ const EmailScreen = (props) => {
           </button>
         </div>
       </form>
-      {email && (
+      {props.email && (
         <div
           
           className="d-flex align-items-center justify-content-evenly py-3"
@@ -75,7 +75,7 @@ const EmailScreen = (props) => {
         >
           <div>
             <label className="form-label text-white">
-              Créér un compte pour {email} ?
+              Créér un compte pour {props.email} ?
             </label>
           </div>
           <div>

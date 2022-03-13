@@ -6,6 +6,7 @@ import logo from "../assets/images/logo.png";
 
 const LandingScreen = () => {
   const [auth, setAuth] = useState(false);
+  const [email, setEmail] = useState(false);
 
   useEffect(() => {
     const authCookie = cookie.load("auth");
@@ -23,8 +24,8 @@ const LandingScreen = () => {
     <>
       
         <img src={logo} alt="" width={60}/>
-        {!auth && <EmailScreen setAuth={setAuth}/>}
-        {auth && <CodeScreen />}
+        {!auth && <EmailScreen setAuth={setAuth} email={email} setEmail={setEmail}/>}
+        {auth && <CodeScreen email={email}/>}
       
     </>
   );
